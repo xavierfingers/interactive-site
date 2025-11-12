@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <input id="in">
+  <script>
+    $(document).ready(function()  {
+      $('h1').html("<em>jQuery Is great!</em>").fadeIn();
+    });
+  </script>
+  <h1></h1>
+  <button onclick="$('h1').html('<em>Jquery Is great!</em>').fadeOut();">Fade Out</button>
+  <button onclick="$('h1').html('<em>Jquery Is great!</em>').fadeIn();">Fade In</button>
+  <button onclick="alert('Hello, World!')">Display Hello World</button>
+  </body>
+</html>
