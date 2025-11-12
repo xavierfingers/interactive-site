@@ -5,16 +5,29 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  
-  <input id="in">
   <script>
     $(document).ready(function()  {
       $('h1').html("<em>jQuery Is great!</em>").fadeIn();
     });
+   function sendData() {
+      $.ajax({
+         type: "POST",
+         url: "https://httpbin.org/post",
+         data: "Hello, from jQuery!",
+         success: function (data) {
+                        alert("Form Submitted Successfully");
+                    },
+                    error: function (data) {
+                        alert("Error occurred while submitting the form");
+                    }
+         });
   </script>
   <h1></h1>
   <button onclick="$('h1').html('<em>Jquery Is great!</em>').fadeOut();">Fade Out</button>
   <button onclick="$('h1').html('<em>Jquery Is great!</em>').fadeIn();">Fade In</button>
+  <button onclick="sendData()">Send data</button>
   <button onclick="alert('Hello, World!')">Display Hello World</button>
+  <p>This is my jQuery site!</p>
+  <p>Thanks for visiting!</p>
   </body>
 </html>
