@@ -10,7 +10,7 @@
       $('h1').html("<em>jQuery Is great!</em>").fadeIn();
     });
    function sendData() {
-      $.ajax({
+       $.ajax({
          type: "POST",
          url: "https://httpbin.org/post",
          data: "Hello, from jQuery!",
@@ -21,6 +21,7 @@
                         alert("Error occurred while submitting the form");
                     }
          });
+    }
   </script>
   <h1></h1>
   <button onclick="$('h1').html('<em>Jquery Is great!</em>').fadeOut();">Fade Out</button>
