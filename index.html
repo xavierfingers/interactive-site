@@ -36,13 +36,15 @@
            url: 'https://baconipsum.com/api/?type=meat-and-filter&paras=3',
            method: 'GET',
            dataType: 'json',
-           success: function(data) {
-        // data is an array of paragraphs
-        data.forEach(function(paragraph) {
-            html = "<p>" + paragraph + "</p>";
-        $('h3').html(html);
-  	}
-   });
+           success: function (paragraph) {
+            let html = "<p>" + paragraph + "</p>";
+           $('h3').html("Text" + html);
+       },
+          error: function(err) {
+              alert("Error occured" + err);
+        }
+     });
+   }
   </script>
   <h1></h1>
   <h3></h3>
