@@ -30,7 +30,25 @@
                         alert("Error occurred while submitting the form");
                     }
          });
-    }
+    }  
+     function textGenerate() {
+       $.ajax({
+           url: 'https://baconipsum.com/api/?type=meat-and-filter&paras=3',
+           method: 'GET',
+           dataType: 'json',
+            success: function(data) {
+        // data is an array of paragraphs
+        let html = '';
+        data.forEach(function(paragraph) {
+          html += '<p>' + paragraph + '</p>';
+        });
+        $('#lorem-container').html(html);
+      },
+      error: function(xhr, status, error) {
+        console.error('Error fetching Lorem Ipsum:', error);
+        $('#lorem-container').text('Failed to load placeholder text.');
+      }
+   });
   </script>
   <h1></h1>
   <button onclick="$('h1').html('<em>jQuery Is great!</em>').fadeOut();">Fade Out</button>
